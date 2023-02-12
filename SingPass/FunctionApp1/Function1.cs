@@ -9,7 +9,7 @@ namespace FunctionApp1
     public static class SingpassCallback
     {
         [FunctionName("qrCallback")]
-        public static  IActionResult Run([HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = null)] HttpRequest req,ILogger log)
+        public static  IActionResult Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "callback")] HttpRequest req,ILogger log)
         {
             log.LogInformation("Received Code"+ req.Query["code"]);
             return new OkResult();
