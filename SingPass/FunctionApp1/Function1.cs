@@ -8,14 +8,14 @@ namespace FunctionApp1
 {
     public static class SingpassCallback
     {
-        [FunctionName("qrCallback/callback")]
+        [FunctionName("qrCallback")]
         public static  IActionResult Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "qrCallback/callback")] HttpRequest req,ILogger log)
         {
             log.LogInformation("Received Code in staging"+ req.Query["code"]);
             return new OkResult();
         }
 
-        [FunctionName("qrCallbackProd/callback")]
+        [FunctionName("qrCallbackProd")]
         public static IActionResult RunProd([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "qrCallbackProd/callback")] HttpRequest req, ILogger log)
         {
             log.LogInformation("Received Code in prod" + req.Query["code"]);
