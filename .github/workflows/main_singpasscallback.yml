@@ -39,4 +39,4 @@ jobs:
           app-name: 'singpasscallback'
           slot-name: 'Production'
           package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_72664C0EB23E489DA1FC26526C090C3F }}
+          publish-profile: ${{ secrets.SINGPASSDEPLOY }}
